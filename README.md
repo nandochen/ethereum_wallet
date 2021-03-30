@@ -30,9 +30,9 @@ To understand and have hands-on ablity to:
 Download or clone the project, unzip. 
 
 ## 使用方式 Usage
-開啟index.html。
+使用隱私模式開啟index.html。
 
-Open index.html. 
+Open index.html in Incognito mode. 
 
 ## 正式/測試鏈 Live/Test Blockchain 
 在lib/js/index.js 中調整參數env，homestead 為正式以太坊鏈；ropsten 為以太坊測試鏈。
