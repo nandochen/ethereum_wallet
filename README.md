@@ -13,3 +13,12 @@ Download or clone the project, unzip.
 開啟index.html。
 
 Open index.html. 
+
+## 正式/測試鏈 Live/Test Blockchain 
+在lib/js/index.js 中調整參數env，homestead 為正式以太坊鏈；ropsten 為以太坊測試鏈。
+
+Change the env parameter in lib/js/index.js, homestead for live Ethereume blockchain, ropsten for test Ethereume blockchain. 
+
+```bash
+var env = 'ropsten'; // homestead - 正式 Live; ropsten - 測試 test 
+```
