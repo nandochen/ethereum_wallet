@@ -4,6 +4,17 @@
 
 A wallet application built on most basic HTML, Javascript and ethers.js, helping people to get into Ethereum development fast and easy.
 
+## 測試以太 Test ETH
+您可以在以下服務取得測試以太：
+You can get test ETH from: 
+1) https://faucet.ropsten.be/
+2) https://faucet.dimensions.network/
+
+## 測試USDT Test USDT
+測試用USDT 將於課程中發放，您也可以聯絡我們取得。
+
+Testing USDT will be issued during course, you can also contact us to obtain some testing USDT.
+
 ## 目標 Goal
 能夠瞭解並實作以下：
 1) 建立一個數位資產錢包。
