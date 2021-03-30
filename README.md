@@ -1,17 +1,17 @@
 # 以太坊錢包 Ethereum Wallet
 ## 關於 About
-一個使用最基本HTML, Javascript, ethers.js 製作之以太坊錢包與以太坊ERC-20 通證智能合約，協助您以最快速、簡單的方式進入以太坊應用程式領域。
+一個使用最基本HTML, Javascript, ethers.js 製作之以太坊錢包，協助您以最快速、簡單的方式進入以太坊應用程式領域。
 
-A wallet application and a ERC-20 smart contract built on most basic HTML, Javascript and ethers.js, helping people to get into Ethereum development fast and easy.
+A wallet application built on most basic HTML, Javascript and ethers.js, helping people to get into Ethereum development fast and easy.
 
 ## 目標 Goal
 能夠瞭解並實作以下：
-1) 建立、發布ERC-20 智能合約並擁有自己的通證。
-2) 建立一個數位資產錢包。
+1) 建立一個數位資產錢包。
+2) 交易、查看交易。
 
-To understand and have hands-on ablity to: 
-1) create and submit an ERC-20 smart contract to have your won token. 
-2) create a crypto wallet application 
+To understand and have hands-on ablity to:  
+1) create a crypto wallet application.
+2) commit transfer and check transaction.
 
 ## 安裝 Installation
 下載或複製專案，解壓縮。

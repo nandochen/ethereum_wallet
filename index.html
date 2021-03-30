@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="以太坊錢包 Ethereum Wallet">
+        <meta name="author" content="陳俊欽 Nando Chen"> 
+        <title>以太坊錢包 Ethereum Wallet</title>  
+        <!-- 調用外部 CSS: 開始 -->
+        <!-- Bootstraps: 操作介面 -->
+        <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <!-- 調用外部 CSS: 結束 -->
+        <meta name="theme-color" content="#7952b3">
+        <style> 
+        body {
+            min-height: 75rem;
+            padding-top: 4.5rem;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- 選單: 開始 -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ethereum Wallet</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#" id="btnWallet">錢包</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#" id="btnTransHistory">交易歷史</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#" id="btnMyAddr">我的地址</a>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+        </nav>
+        <!-- 選單: 結束 -->
+        <!-- 主容器: 開始 -->
+        <main class="container">
+            <!-- 錢包: 開始 -->
+            <div class="bg-light p-5 rounded" id="viewWallet">
+                <h1>我的錢包</h1>
+                <p class="lead mb-5" id="lbBalance">0.000 USDT</p>
+                <a class="btn btn-lg btn-primary" href="#" role="button" id="btnTransfer">交易 &raquo;</a>
+            </div>
+            <!-- 錢包: 結束 -->
+            <!-- 交易: 開始 -->
+            <div class="bg-light p-5 rounded d-none" id="viewTransfer">
+                <h1>交易</h1>
+                <p class="mb-5">
+                    <div class="mb-1"><span class="label">數量: </span><input type="text" id="tbAmount" value="0" /></div>
+                    <div><span class="label">地址: </span><input type="text" id="tbAddress" /></div>
+                </p>
+                <a class="btn btn-lg btn-primary" href="#" role="button" id="btnConfirm">確認 &raquo;</a>
+            </div>
+            <!-- 交易: 結束 -->
+            <!-- 歷史資訊列表: 開始 -->
+            <div class="bg-light p-5 rounded d-none" id="viewList">
+                <h1>交易歷史</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Tx</th>
+                            <th>時間</th>
+                            <th>數量</th>
+                            <th>幣種</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblList"></tbody>
+                </table>
+            </div>
+            <!-- 歷史資訊列表: 結束 -->
+            <!-- 交易明細: 開始 -->
+            <div class="bg-light p-5 rounded d-none" id="viewDetail">
+                <h1>交易明細</h1>
+                <p class="mb-5">
+                    <div><span class="label">Tx: </span><span id="lbTx"></span></div>
+                    <div><span class="label">狀態: </span><span id="lbStatus"></span></div>
+                    <div><span class="label">時間: </span><span id="lbTime"></span></div>
+                    <div class="mb-1"><span class="label">數量: </span><span id="lbAmount"></span></div>
+                    <div><span class="label">地址: </span><span id="lbAddress"></span></div>
+                </p> 
+                <a class="btn btn-lg btn-primary" href="#" role="button" id="btnBack">返回</a>
+            </div>
+            <!-- 交易明細: 結束 -->
+            <!-- 新錢包: 開始 -->
+            <div class="bg-light p-5 rounded d-none" id="viewInit">
+                <h1>新錢包</h1>
+                <p class="mb-5">
+                    <div><span class="label">地址: </span><span id="lbAddressInit"></span></div>
+                    <div><span class="label">PK: </span><span id="lbPKInit"></span></div>
+                </p>  
+            </div>
+            <!-- 新錢包: 結束 -->
+        </main>
+        <!-- 主容器: 結束 -->
+        <!-- 調用外部 JS: 開始 -->
+        <!-- jQuery: JS 基本操作 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script> 
+        <!-- Bootstraps: 操作介面 -->
+        <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> 
+        <!-- ethers.js: 以太坊操作 -->
+        <script src="https://cdn.ethers.io/scripts/ethers-v3.min.js" charset="utf-8" type="text/javascript"> </script>
+        <!-- 調用外部 JS -->
+        <!-- 調用內部 JS --> 
+        <script src="lib/js/index.js"></script> 
+        <!-- 調用內部 JS: 結束 -->
+    </body>
+</html>
