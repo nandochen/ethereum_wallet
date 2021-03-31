@@ -16,6 +16,17 @@
             min-height: 75rem;
             padding-top: 4.5rem;
         }
+        .text-right {
+            text-align: right !important;
+        }
+        .small {
+            font-size: small !important;
+            color: #666;
+        }
+        .label {
+            display: inline-block;
+            width: 110px;
+        }
         </style>
     </head>
     <body>
@@ -33,10 +44,7 @@
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="#" id="btnTransHistory">交易歷史</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#" id="btnMyAddr">我的地址</a>
-                        </li>
+                        </li> 
                     </ul> 
                 </div>
             </div>
@@ -49,7 +57,7 @@
             <!-- 測試網提示: 開始 -->
             <!-- 錢包: 開始 -->
             <div class="bg-light p-5 rounded" id="viewWallet">
-                <h1>我的錢包</h1>
+                <h1>我的錢包&nbsp;<span class="small" id="lbAddressMini"></span></h1>
                 <p class="lead mb-5" id="lbBalance">0.000 USDT</p>
                 <a class="btn btn-lg btn-primary" href="#" role="button" id="btnTransfer">交易 &raquo;</a>
             </div>
@@ -67,30 +75,35 @@
             <!-- 歷史資訊列表: 開始 -->
             <div class="bg-light p-5 rounded d-none" id="viewList">
                 <h1>交易歷史</h1>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>來源</th>
-                            <th>時間</th>
-                            <th>幣種</th>
-                            <th>數量</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tblList"></tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th> 
+                                <th>支付端</th>
+                                <th>接收端</th>
+                                <th>時間</th>
+                                <th>幣種</th>
+                                <th>數量</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tblList"></tbody>
+                    </table>
+                </div>
             </div>
             <!-- 歷史資訊列表: 結束 -->
             <!-- 交易明細: 開始 -->
             <div class="bg-light p-5 rounded d-none" id="viewDetail">
                 <h1>交易明細</h1>
-                <p class="mb-5">
-                    <div><span class="label">Tx: </span><span id="lbTx"></span></div>
-                    <div><span class="label">狀態: </span><span id="lbStatus"></span></div>
-                    <div><span class="label">時間: </span><span id="lbTime"></span></div>
-                    <div><span class="label">來源: </span><span id="lbFrom"></span></div>
-                    <div class="mb-1"><span class="label">數量: </span><span id="lbAmount"></span></div>
-                    <div><span class="label">地址: </span><span id="lbAddress"></span></div>
+                <p class="mb-5"> 
+                    <div class="mb-1"><span class="label">交易HASH: </span><a href="#" target="_blank" id="lbHash"></a></div>
+                    <div class="mb-1"><span class="label">區塊號碼: </span><span id="lbBlockNumber"></span></div>
+                    <div class="mb-1"><span class="label">確認數: </span><span id="lbConfirm"></span></div>
+                    <div class="mb-1"><span class="label">狀態: </span><span id="lbStatus"></span></div>
+                    <div class="mb-1"><span class="label">時間: </span><span id="lbTime"></span></div>
+                    <div class="mb-1"><span class="label">支付端: </span><span id="lbFrom"></span></div>
+                    <div class="mb-1"><span class="label">接收端: </span><span id="lbTo"></span></div>
+                    <div class="mb-1"><span class="label">數量: </span><span id="lbAmount"></span></div> 
                 </p> 
                 <a class="btn btn-lg btn-primary" href="#" role="button" id="btnBack">返回</a>
             </div>
@@ -99,8 +112,8 @@
             <div class="bg-light p-5 rounded d-none" id="viewInit">
                 <h1>新錢包</h1>
                 <p class="mb-5">
-                    <div><span class="label">地址: </span><span id="lbAddressInit"></span></div>
-                    <div><span class="label">PK: </span><span id="lbPKInit"></span></div>
+                    <div class="mb-1"><span class="label">地址: </span><span id="lbAddressInit"></span></div>
+                    <div class="mb-1"><span class="label">PK: </span><span id="lbPKInit"></span></div>
                 </p>  
                 <p class="mb-5">請複製地址與PK，分別取代lib/js/index.js 中的myAddress 與myPK 參數。</p>  
             </div>
