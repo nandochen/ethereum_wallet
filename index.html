@@ -41,18 +41,32 @@
             <div class="bg-light p-5 rounded" id="viewWallet">
                 <h1>我的錢包&nbsp;<span class="small" id="lbAddressMini"></span></h1>
                 <p class="mb-5" id="lbBalance">0.000 USDT</p>
-                <a class="btn btn-md btn-primary" href="#" role="button" id="btnTransfer">交易 &raquo;</a>
+                <a class="btn btn-md btn-outline-primary" href="#" role="button" id="btnTransfer">交易</a>
             </div>
             <!-- 錢包: 結束 -->
             <!-- 交易: 開始 -->
             <div class="bg-light p-5 rounded d-none" id="viewTransfer">
-                <h1>交易</h1>
+                <h1>交易 USDT</h1>
                 <p class="mb-5">
-                    <div class="mb-1"><span class="label">數量: </span><input type="text" id="tbAmount" value="0" /></div>
-                    <div><span class="label">地址: </span><input type="text" id="tbAddress" /></div>
+                    <div class="mb-1"><span class="label">現有餘額: </span><input type="text" id="tbBalance" value="0" readonly /></div>
+                    <div class="mb-1"><span class="label"><span class="text-danger">*</span>轉出數量: </span><input type="number" id="tbAmount" value="0" min="1" max="1" /></div>
+                    <div><span class="label"><span class="text-danger">*</span>接收地址: </span><input type="text" id="tbAddress" /></div>
                 </p>
-                <a class="btn btn-md btn-primary" href="#" role="button" id="btnConfirm">確認 &raquo;</a>
+                <div class="d-flex justify-content-between" id="transferTool">
+                    <a class="btn btn-md btn-danger" href="#" role="button" id="btnCancel">取消</a>
+                    <a class="btn btn-md btn-primary" href="#" role="button" id="btnConfirm">確認</a>
+                </div>
+                <p id="transferInfo"></p>
+                <div id="transferError">
+                    <a class="btn btn-md btn-danger" href="#" role="button" id="btnError">取消</a> 
+                </div>
             </div>
+            <!-- 交易進行中提示 -->
+            <div id="viewTransferLock" class="modal fade mt-5" tabindex="-1" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content"><div class="modal-body">交易進行中，請勿關閉或重整畫面!</div></div>
+                </div>
+            </div> 
             <!-- 交易: 結束 -->
             <!-- 歷史資訊列表: 開始 -->
             <div class="bg-light p-5 rounded d-none" id="viewList">
@@ -106,7 +120,7 @@
             </div>
             <!-- 新錢包: 結束 -->
             <!-- 測試網提示: 開始 -->
-            <div class="p-1 rounded text-center text-danger mb-1" id="viewTest">目前環境: 以太鏈測試鏈</div>
+            <div class="p-1 rounded text-center text-danger mb-1" id="viewTest">環境: 測試鏈</div>
             <!-- 測試網提示: 開始 -->
         </main>
         <!-- 主容器: 結束 -->
