@@ -1,0 +1,23 @@
+/*
+* 
+*/
+
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    font-size: 15px !important;
+}
+h1 { 
+    font-size: 17px !important;
+}
+.text-right {
+    text-align: right !important;
+}
+.small {
+    font-size: small !important;
+    color: #666;
+}
+.label {
+    display: inline-block;
+    width: 110px;
+}
