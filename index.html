@@ -6,28 +6,13 @@
         <meta name="description" content="以太坊錢包 Ethereum Wallet">
         <meta name="author" content="陳俊欽 Nando Chen"> 
         <title>以太坊錢包 Ethereum Wallet</title>  
+        <!-- CSS: 開始 -->
         <!-- 調用外部 CSS: 開始 -->
         <!-- Bootstraps: 操作介面 -->
         <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-        <!-- 調用外部 CSS: 結束 -->
-        <meta name="theme-color" content="#7952b3">
-        <style> 
-        body {
-            min-height: 75rem;
-            padding-top: 4.5rem;
-        }
-        .text-right {
-            text-align: right !important;
-        }
-        .small {
-            font-size: small !important;
-            color: #666;
-        }
-        .label {
-            display: inline-block;
-            width: 110px;
-        }
-        </style>
+        <!-- 調用外部 CSS: 結束 --> 
+        <link href="lib/css/index.css" rel="stylesheet"> 
+        <!-- CSS: 結束 -->
     </head>
     <body>
         <!-- 選單: 開始 -->
@@ -52,14 +37,11 @@
         <!-- 選單: 結束 -->
         <!-- 主容器: 開始 -->
         <main class="container">
-            <!-- 測試網提示: 開始 -->
-            <div class="p-1 rounded text-center text-danger mb-1" id="viewTest">目前環境: 以太鏈測試鏈</div>
-            <!-- 測試網提示: 開始 -->
             <!-- 錢包: 開始 -->
             <div class="bg-light p-5 rounded" id="viewWallet">
                 <h1>我的錢包&nbsp;<span class="small" id="lbAddressMini"></span></h1>
-                <p class="lead mb-5" id="lbBalance">0.000 USDT</p>
-                <a class="btn btn-lg btn-primary" href="#" role="button" id="btnTransfer">交易 &raquo;</a>
+                <p class="mb-5" id="lbBalance">0.000 USDT</p>
+                <a class="btn btn-md btn-primary" href="#" role="button" id="btnTransfer">交易 &raquo;</a>
             </div>
             <!-- 錢包: 結束 -->
             <!-- 交易: 開始 -->
@@ -69,7 +51,7 @@
                     <div class="mb-1"><span class="label">數量: </span><input type="text" id="tbAmount" value="0" /></div>
                     <div><span class="label">地址: </span><input type="text" id="tbAddress" /></div>
                 </p>
-                <a class="btn btn-lg btn-primary" href="#" role="button" id="btnConfirm">確認 &raquo;</a>
+                <a class="btn btn-md btn-primary" href="#" role="button" id="btnConfirm">確認 &raquo;</a>
             </div>
             <!-- 交易: 結束 -->
             <!-- 歷史資訊列表: 開始 -->
@@ -104,8 +86,13 @@
                     <div class="mb-1"><span class="label">支付端: </span><span id="lbFrom"></span></div>
                     <div class="mb-1"><span class="label">接收端: </span><span id="lbTo"></span></div>
                     <div class="mb-1"><span class="label">數量: </span><span id="lbAmount"></span></div> 
+                    <hr />
+                    <div class="mb-1"><span class="label">以太坊手續費: </span><span id="lbTransactionFee"></span></div> 
+                    <div class="mb-1"><span class="label">GAS 上限: </span><span id="lbGASLimit"></span></div> 
+                    <div class="mb-1"><span class="label">GAS 價格: </span><span id="lbGASPrice"></span></div> 
+                    <div class="mb-5"><span class="label">GAS 使用: </span><span id="lbGASUsed"></span></div> 
                 </p> 
-                <a class="btn btn-lg btn-primary" href="#" role="button" id="btnBack">返回</a>
+                <a class="btn btn-md btn-outline-primary" href="#" role="button" id="btnBack">返回</a>
             </div>
             <!-- 交易明細: 結束 -->
             <!-- 新錢包: 開始 -->
@@ -118,6 +105,9 @@
                 <p class="mb-5">請複製地址與PK，分別取代lib/js/index.js 中的myAddress 與myPK 參數。</p>  
             </div>
             <!-- 新錢包: 結束 -->
+            <!-- 測試網提示: 開始 -->
+            <div class="p-1 rounded text-center text-danger mb-1" id="viewTest">目前環境: 以太鏈測試鏈</div>
+            <!-- 測試網提示: 開始 -->
         </main>
         <!-- 主容器: 結束 -->
         <!-- 調用外部 JS: 開始 -->
@@ -126,10 +116,15 @@
         <!-- Bootstraps: 操作介面 -->
         <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script> 
         <!-- ethers.js: 以太坊操作 -->
-        <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"> </script>
+        <script src="https://cdn.ethers.io/scripts/ethers-v4.min.js" charset="utf-8" type="text/javascript"></script>
+        <!-- moment.js: 時間操作 -->
+        <script src="lib/js/moment.min.js" charset="utf-8" type="text/javascript"></script>
+        <script src="lib/js/moment-timezone.min.js" charset="utf-8" type="text/javascript"></script>
+        <!-- 通證規格: USDT -->
+        <script src="lib/js/token_USDT.js" charset="utf-8" type="text/javascript"></script>
         <!-- 調用外部 JS -->
         <!-- 調用內部 JS --> 
-        <script src="lib/js/index.js"></script> 
+        <script src="lib/js/index.js" defer></script> 
         <!-- 調用內部 JS: 結束 -->
     </body>
 </html>
