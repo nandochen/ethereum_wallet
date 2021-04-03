@@ -39,7 +39,7 @@ To understand and have hands-on ablity to:
 Download or clone the project, unzip. 
 
 ## 檔案結構 File Structure
-
+<pre><code>
 .
 ├── index.html                          # 以太錢包 Ethereum Wallet
 ├── course.html                         # 課程檔 Course File
@@ -47,6 +47,7 @@ Download or clone the project, unzip.
 │   ├── js                              # Javascript 
 │   └── css                             # CSS 
 └── ethereum_wallet.code-workspace      # VisualStudio Code 專案 Project
+</code></pre>
 
 ## 使用方式 Usage
 使用瀏覽器開啟index.html。
