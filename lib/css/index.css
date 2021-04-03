@@ -1,7 +1,6 @@
 /*
-* 
+* CSS 
 */
-
 body {
     min-height: 75rem;
     padding-top: 4.5rem;
@@ -20,4 +19,10 @@ h1 {
 .label {
     display: inline-block;
     width: 110px;
+}
+.rounded {
+    border-radius: .7rem!important;
+}
+.bg-light {
+    background-color: #f1f1f1!important;
 }
