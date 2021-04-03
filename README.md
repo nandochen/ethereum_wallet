@@ -11,6 +11,11 @@ Get your EtherScan API KEY:
 
 https://etherscan.io/apis
 
+## IDE 
+VisualStudio Code
+
+https://code.visualstudio.com/download
+
 ## 測試以太 Test ETH
 您可以在以下服務取得測試以太：
 
